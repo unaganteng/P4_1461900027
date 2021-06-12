@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\jenisbuku;
+use App\Http\Controllers\Excel;
+use App\Exports\ExportToExcel;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+    Route::get('/book',[jenisbuku::class, 'index']);
+    Route::get('/cari',[jenisbuku::class, 'carijoin']);
+    Route::get('/export', 'jenisbuku@export');
+
